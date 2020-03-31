@@ -19,27 +19,27 @@ import theme from '../theme';
 import '../App.css';
 
 class MaterialUIEx4Component extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            anchorEl: null,
-            selectedMsg: '',
-            gotData: false,
-            snackbarMsg: '',
-            usernames: [],
-            users: [],
-            userInfo: '',
-        };
+  constructor(props) {
+    super(props);
+    this.state = {
+      anchorEl: null,
+      selectedMsg: '',
+      gotData: false,
+      snackbarMsg: '',
+      usernames: [],
+      users: [],
+      userInfo: '',
     };
+  }
 
   onMenuItemClicked = (event) => {
     this.setState({ anchorEl: event.currentTarget });
-    };
-    
+  };
+
   onClose = () => {
     this.setState({ anchorEl: null });
-    };
-    
+  };
+
   onUsersItemClicked = async () => {
     this.setState({ selectedMsg: '', userInfo: '' });
     try {
@@ -61,15 +61,15 @@ class MaterialUIEx4Component extends React.PureComponent {
         anchorEl: null,
       });
     }
-    };
-    
+  };
+
   snackbarClose = () => {
     this.setState({
       gotData: false,
       selectedMsg: `${this.state.usernames.length} users loaded`,
     });
-    };
-    
+  };
+
   render() {
     const { anchorEl, selectedMsg, gotData, snackbarMsg } = this.state;
     return (
